@@ -16,9 +16,9 @@ export default function Home() {
       <Hero />
       <Experience />
       <Projects />
-      <ExtraContent />
       <SystemDesign />
       <TechStack />
+      <ExtraContent />
       <Contact />
     </main>
   );

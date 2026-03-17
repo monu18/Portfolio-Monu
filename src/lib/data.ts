@@ -8,6 +8,7 @@ export const PERSONAL_INFO = {
   tagline: "Building Distributed Systems at Scale",
   bio: "I design and build high-throughput backend systems that handle millions of users. From real-time personalization engines to distributed subscription platforms and AI gateways — I obsess over latency, reliability, and elegant architecture.",
   email: "mkuma47@uic.edu",
+  emailPersonal: "connectkumar.monu@gmail.com",
   phone: "+1 (312) 843-0296",
   github: "https://github.com/monu18",
   linkedin: "https://linkedin.com/in/monu18",
@@ -200,6 +201,8 @@ export interface Project {
   metrics: { value: string; label: string }[];
   github?: string;
   youtube?: string;
+  youtube2?: string;
+  youtube2Label?: string;
   featured: boolean;
   color: string;
 }
@@ -240,7 +243,7 @@ export const PROJECTS: Project[] = [
       { value: "Async", label: "LLM Pipeline" },
       { value: "Multi-lang", label: "Java + Python" },
     ],
-    github: "https://github.com/monu18",
+    github: "https://github.com/monu18/AI-Over-SMS",
     featured: true,
     color: "primary",
   },
@@ -280,8 +283,8 @@ export const PROJECTS: Project[] = [
       { value: "gRPC", label: "Unified API" },
       { value: "Multi-turn", label: "Context" },
     ],
-    github: "https://github.com/monu18",
-    youtube: "https://youtube.com",
+    github: "https://github.com/monu18/LLMInferno",
+    youtube: "https://youtu.be/A4RKetC9_5U?si=5y9GsigT8yKRF8o9",
     featured: true,
     color: "cyan",
   },
@@ -310,9 +313,70 @@ export const PROJECTS: Project[] = [
       { value: "Multi-M", label: "Tuple Scale" },
       { value: "4", label: "Join Types" },
     ],
-    github: "https://github.com/monu18",
+    github: "https://github.com/monu18/TacoDB-Relational-Database-Engine",
     featured: true,
     color: "green",
+  },
+  {
+    id: "distributed-ml-pipeline",
+    title: "Distributed ML Training Pipeline",
+    subtitle: "LLM encoding, embedding & semantic analysis on Hadoop + AWS EMR",
+    category: "ml",
+    status: "open-source",
+    period: "Sep 2024 – Dec 2024",
+    problem:
+      "Processing and training ML models on a 65GB+ text corpus on a single machine was infeasible — memory constraints, serial execution, and unpredictable runtimes blocked experimentation at scale.",
+    solution:
+      "Built a distributed ML training pipeline on AWS EMR using Hadoop and Spark for large-scale text processing and embedding generation. Used DeepLearning4j for parallelized model training with integrated metrics tracking. Optimized data partitioning and execution plans for predictable cluster-level performance.",
+    architecture:
+      "HDFS (65GB+ corpus) → Spark ETL (partitioned text processing) → DeepLearning4j (parallelized training) → Embedding generation → S3 (model artifacts + metrics)",
+    impact: [
+      "Processed a 65GB+ text corpus with predictable, linearly-scaling cluster performance",
+      "Parallelized model training across AWS EMR cluster — eliminated serial bottlenecks",
+      "Integrated metrics tracking and management via DeepLearning4j parameter server",
+      "Optimized Spark data partitioning strategy for minimal shuffle overhead",
+    ],
+    technologies: ["Java", "Apache Spark", "Hadoop", "HDFS", "AWS EMR", "DeepLearning4j", "S3"],
+    metrics: [
+      { value: "65GB+", label: "Corpus Size" },
+      { value: "EMR", label: "Cluster" },
+      { value: "Parallel", label: "Training" },
+      { value: "DL4J", label: "Framework" },
+    ],
+    github: "https://github.com/monu18/LLMForge",
+    youtube: "https://www.youtube.com/watch?v=AdRrHLsCkYA",
+    youtube2: "https://www.youtube.com/watch?v=QQrTzevd2hA",
+    youtube2Label: "LLM on EMR",
+    featured: false,
+    color: "primary",
+  },
+  {
+    id: "llm-job-assistant",
+    title: "LLM-Powered Job Application Assistant",
+    subtitle: "GenAI tool for resume parsing, JD matching & tailored email generation",
+    category: "ml",
+    status: "open-source",
+    period: "Jan 2025 – Mar 2025",
+    problem:
+      "Job seekers spend hours manually tailoring applications per role. Generic emails get ignored — but personalization at scale requires understanding both the resume and the job description deeply.",
+    solution:
+      "Developed a GenAI tool that parses resumes and job descriptions, then generates highly tailored application emails using Gemini. Integrated a \"DeepThink\" chain-of-thought reasoning layer that surfaces the model's thought process step-by-step — building user trust in AI-generated output.",
+    architecture:
+      "Resume PDF + JD text → Gemini (structured extraction) → DeepThink reasoning chain → Tailored email generation → Streamlit UI",
+    impact: [
+      "End-to-end resume + JD parsing with structured entity extraction via prompt engineering",
+      "\"DeepThink\" reasoning layer makes AI thought process transparent — boosted user confidence and engagement",
+      "Generates role-specific, personalized emails that reflect the candidate's actual experience",
+      "Streamlit UI enables non-technical users to run the full pipeline in minutes",
+    ],
+    technologies: ["Python", "Streamlit", "Gemini", "Prompt Engineering", "LLM", "RAG"],
+    metrics: [
+      { value: "Gemini", label: "LLM Backend" },
+      { value: "DeepThink", label: "CoT Layer" },
+      { value: "E2E", label: "Pipeline" },
+    ],
+    featured: false,
+    color: "cyan",
   },
 ];
 
@@ -493,12 +557,13 @@ export interface ExtraProject {
   technologies: string[];
   github?: string;
   link?: string;
+  youtube?: string;
+  youtube2?: string;
+  youtube2Label?: string;
   color: "primary" | "cyan" | "green";
 }
 
-export const EXTRA_PROJECTS: ExtraProject[] = [
-  // Add LinkedIn projects here — populate from LinkedIn content
-];
+export const EXTRA_PROJECTS: ExtraProject[] = [];
 
 // ============================================================
 // PUBLICATIONS
@@ -514,7 +579,16 @@ export interface Publication {
 }
 
 export const PUBLICATIONS: Publication[] = [
-  // Populate from LinkedIn
+  {
+    title:
+      "Unlocking COVID-19 Patterns: Exploring Deep Learning Models for Precise Recognition and Classification of CT Images",
+    journal: "International Journal of Science and Research Archive",
+    date: "Jul 28, 2023",
+    description:
+      "Proposed three deep CNN architectures (AlexNet, InceptionV3, VGG19) for COVID-19 diagnosis from CT scan images using the HUST-19 dataset (13,980 images). InceptionV3 achieved 99.95% test accuracy with precision, recall, and F1-score of 1.0 — demonstrating the potential of deep learning for rapid, reliable COVID-19 classification.",
+    link: "https://doi.org/10.30574/ijsra.2023.9.2.0597",
+    doi: "10.30574/ijsra.2023.9.2.0597",
+  },
 ];
 
 // ============================================================
@@ -530,7 +604,14 @@ export interface VolunteerEntry {
 }
 
 export const VOLUNTEERING: VolunteerEntry[] = [
-  // Populate from LinkedIn
+  {
+    org: "Magadh Mission Foundation",
+    role: "Co-Founder & Developer",
+    period: "Apr 2020 – Jul 2024 · 4 yrs 4 mos",
+    description:
+      "Co-founded a nonprofit focused on digital inclusion. Built and maintained the organization's website for outreach and engagement. Volunteered time teaching underprivileged children basic computer skills, hygiene awareness, and digital literacy in Delhi.",
+    link: "https://magadhmission.com/",
+  },
 ];
 
 // ============================================================

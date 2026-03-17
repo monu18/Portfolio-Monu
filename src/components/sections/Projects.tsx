@@ -117,16 +117,27 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               )}
             </div>
           </div>
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 shrink-0">
             {project.youtube && (
               <a
                 href={project.youtube}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg border border-border hover:border-red-500/50 text-text-muted hover:text-red-400 transition-all"
+                className="p-1.5 rounded-lg border border-border hover:border-red-500/50 text-text-muted hover:text-red-400 transition-all"
                 title="Watch Demo"
               >
-                <Youtube size={15} />
+                <Youtube size={14} />
+              </a>
+            )}
+            {project.youtube2 && (
+              <a
+                href={project.youtube2}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-lg border border-border hover:border-red-500/50 text-text-muted hover:text-red-400 transition-all"
+                title={project.youtube2Label ?? "Watch Demo 2"}
+              >
+                <Youtube size={14} />
               </a>
             )}
             {project.github && (
@@ -134,10 +145,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-lg border border-border hover:border-border-light text-text-muted hover:text-text-primary transition-all"
+                className="p-1.5 rounded-lg border border-border hover:border-border-light text-text-muted hover:text-text-primary transition-all"
                 title="View on GitHub"
               >
-                <ArrowUpRight size={16} />
+                <ArrowUpRight size={15} />
               </a>
             )}
           </div>

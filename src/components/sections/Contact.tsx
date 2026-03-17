@@ -18,12 +18,21 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 const LINKS = [
   {
     icon: Mail,
-    label: "Email",
+    label: "UIC Email",
     value: PERSONAL_INFO.email,
     href: `mailto:${PERSONAL_INFO.email}`,
     color: "text-primary",
     bg: "bg-primary-glow border-primary/20",
     hoverBorder: "hover:border-primary/50",
+  },
+  {
+    icon: Mail,
+    label: "Personal Email",
+    value: PERSONAL_INFO.emailPersonal,
+    href: `mailto:${PERSONAL_INFO.emailPersonal}`,
+    color: "text-cyan",
+    bg: "bg-cyan-glow border-cyan/20",
+    hoverBorder: "hover:border-cyan/50",
   },
   {
     icon: Github,
@@ -102,7 +111,7 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact links */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
             {LINKS.map((link, i) => {
               const Icon = link.icon;
               return (
