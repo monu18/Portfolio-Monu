@@ -407,6 +407,130 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Kubernetes",
     ],
   },
+  {
+    id: "discount-engine",
+    title: "Personalized Discount Engine",
+    subtitle: "Behavioral signal pipeline that drove 8% lift in premium subscription uptake",
+    challenge:
+      "Jeevansathi was running blanket discount campaigns — same offer to every user regardless of intent or engagement. This eroded margins without meaningfully improving conversions. The challenge: build a system that determines the right discount, for the right user, at the right moment — using real behavioral signals without adding latency to the critical path.",
+    designPrinciples: [
+      {
+        title: "Behavioral Segmentation",
+        description:
+          "Users are scored across engagement dimensions: profile completeness, login recency, match interaction rate, and messaging frequency. Segment buckets (high-intent, dormant, re-engaging) determine discount depth — no flat rates, fully personalized.",
+      },
+      {
+        title: "Real-Time Signal Freshness",
+        description:
+          "Kafka streams user activity events with <5-minute freshness into the scoring pipeline. Stale signals miss intraday conversion windows — a user who just viewed 5 profiles is far more likely to convert than yesterday's batch model would predict.",
+      },
+      {
+        title: "Read-Optimized Eligibility Layer",
+        description:
+          "Computed discount eligibility is materialized into Aerospike keyed by user ID. The Pricing API does a single sub-millisecond Aerospike read at checkout — zero latency penalty on the conversion funnel's hottest path.",
+      },
+    ],
+    keyDecisions: [
+      {
+        decision: "MongoDB for behavioral profiles over a relational store",
+        rationale:
+          "Engagement signals are heterogeneous and evolve rapidly (new signal types added monthly). MongoDB's flexible document model avoids schema migrations for every signal iteration. Each user document holds the full behavioral snapshot for the scoring engine.",
+        tradeoff:
+          "Sacrifices strict transactional consistency. Behavioral profiles are eventually consistent — acceptable since a 30-second stale score has negligible business impact vs. a 30-second checkout delay.",
+      },
+      {
+        decision: "Kafka event stream over nightly batch ETL",
+        rationale:
+          "Conversion intent has a half-life of hours, not days. A user who browses 10 profiles and sends 3 messages at 2pm has peak intent at 2:05pm — not the next morning. Kafka ensures the scoring pipeline sees signals within minutes.",
+        tradeoff:
+          "Streaming infrastructure is operationally heavier than batch jobs. Requires consumer group management, offset handling, and dead-letter queues for malformed events.",
+      },
+      {
+        decision: "Feign client for pricing service integration",
+        rationale:
+          "Feign client creates a strongly-typed, declarative HTTP contract between the Discount Engine and the Pricing Service. This prevents integration drift — both services stay aligned through a shared interface definition, with built-in load balancing and circuit breaking via Resilience4j.",
+        tradeoff:
+          "Adds a compile-time dependency on the pricing service's API contract. Breaking changes in the Pricing API require coordinated deploys.",
+      },
+    ],
+    scaleNumbers: [
+      { metric: "Users scored daily", value: "2M+" },
+      { metric: "Premium uptake lift", value: "+8%" },
+      { metric: "Signal freshness", value: "<5 min" },
+      { metric: "Checkout API latency", value: "<1ms" },
+      { metric: "Discount variants", value: "10+" },
+      { metric: "Daily Kafka events", value: "5M+" },
+    ],
+    lessonsLearned: [
+      "Behavioral segmentation outperformed rule-based discounting from day one — the 8% lift came with tighter margins than blanket discounts because high-intent users needed smaller nudges.",
+      "Aerospike's TTL feature was critical: stale discount eligibility auto-expires, preventing the system from offering discounts to users who already converted or churned.",
+      "Feign client's circuit breaker saved us during a Pricing Service degradation event — the Discount Engine gracefully fell back to a default discount tier instead of failing the entire checkout flow.",
+    ],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "Apache Kafka",
+      "MongoDB",
+      "Aerospike",
+      "Feign Client",
+      "Resilience4j",
+      "Redis",
+      "Kubernetes",
+    ],
+  },
+];
+
+// ============================================================
+// EXTRA PROJECTS (LinkedIn / side projects beyond main resume)
+// ============================================================
+
+export interface ExtraProject {
+  id: string;
+  title: string;
+  subtitle: string;
+  period?: string;
+  description: string;
+  technologies: string[];
+  github?: string;
+  link?: string;
+  color: "primary" | "cyan" | "green";
+}
+
+export const EXTRA_PROJECTS: ExtraProject[] = [
+  // Add LinkedIn projects here — populate from LinkedIn content
+];
+
+// ============================================================
+// PUBLICATIONS
+// ============================================================
+
+export interface Publication {
+  title: string;
+  journal: string;
+  date: string;
+  description: string;
+  link?: string;
+  doi?: string;
+}
+
+export const PUBLICATIONS: Publication[] = [
+  // Populate from LinkedIn
+];
+
+// ============================================================
+// VOLUNTEERING / COMMUNITY
+// ============================================================
+
+export interface VolunteerEntry {
+  org: string;
+  role: string;
+  period: string;
+  description: string;
+  link?: string;
+}
+
+export const VOLUNTEERING: VolunteerEntry[] = [
+  // Populate from LinkedIn
 ];
 
 // ============================================================
