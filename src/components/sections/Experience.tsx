@@ -185,26 +185,31 @@ function EducationCard() {
         <GraduationCap size={18} className="text-cyan" />
         <h3 className="text-lg font-bold text-text-primary">Education</h3>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {EDUCATION.map((edu) => (
           <div
             key={edu.school}
-            className="bg-surface border border-border hover:border-cyan/30 rounded-2xl p-5 transition-all duration-200"
+            className="relative bg-surface-2 border border-cyan/25 hover:border-cyan/50 rounded-2xl p-6 transition-all duration-200 overflow-hidden"
           >
-            <p className="text-sm font-bold text-text-primary mb-1">{edu.school}</p>
-            <p className="text-xs text-cyan font-medium mb-2">{edu.degree}</p>
-            <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs text-text-muted">
-              <span className="flex items-center gap-1">
-                <Calendar size={10} />
-                {edu.period}
+            {/* Left accent bar */}
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-cyan rounded-l-2xl" />
+
+            <div className="pl-1">
+              <p className="text-base font-bold text-text-primary mb-1 leading-snug">{edu.school}</p>
+              <p className="text-sm text-cyan font-semibold mb-3">{edu.degree}</p>
+              <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs text-text-muted mb-3">
+                <span className="flex items-center gap-1.5">
+                  <Calendar size={11} />
+                  {edu.period}
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <MapPin size={11} />
+                  {edu.location}
+                </span>
+              </div>
+              <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-green/10 border border-green/30 text-green text-xs font-mono font-semibold">
+                GPA: {edu.gpa}
               </span>
-              <span className="flex items-center gap-1">
-                <MapPin size={10} />
-                {edu.location}
-              </span>
-            </div>
-            <div className="mt-2">
-              <span className="tag tag-green text-[10px]">GPA: {edu.gpa}</span>
             </div>
           </div>
         ))}

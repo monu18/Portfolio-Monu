@@ -231,7 +231,7 @@ function PublicationCard({ pub, index }: { pub: Publication; index: number }) {
             )}
           </div>
 
-          <p className="text-xs text-text-secondary leading-relaxed">{pub.description}</p>
+          <p className="text-sm text-text-secondary leading-relaxed">{pub.description}</p>
 
           {/* Highlight badge */}
           <div className="mt-3 flex flex-wrap gap-2">
@@ -289,7 +289,7 @@ function VolunteerCard({ entry, index }: { entry: VolunteerEntry; index: number 
             </span>
           </div>
 
-          <p className="text-xs text-text-secondary leading-relaxed">{entry.description}</p>
+          <p className="text-sm text-text-secondary leading-relaxed">{entry.description}</p>
         </div>
       </div>
     </motion.div>

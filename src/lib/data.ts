@@ -648,4 +648,15 @@ export const TECH_CATEGORIES = [
       { name: "LLM Orchestration", level: "familiar", color: "#06B6D4" },
     ],
   },
+  {
+    label: "Frontend",
+    items: [
+      { name: "React", level: "proficient", color: "#61DAFB" },
+      { name: "Next.js", level: "proficient", color: "#FFFFFF" },
+      { name: "TypeScript", level: "proficient", color: "#3178C6" },
+      { name: "Tailwind CSS", level: "proficient", color: "#06B6D4" },
+      { name: "Framer Motion", level: "familiar", color: "#FF0055" },
+      { name: "Streamlit", level: "proficient", color: "#FF4B4B" },
+    ],
+  },
 ];

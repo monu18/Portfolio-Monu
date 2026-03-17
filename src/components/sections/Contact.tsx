@@ -110,8 +110,8 @@ export default function Contact() {
             <span className="text-green">Open to opportunities</span>
           </motion.div>
 
-          {/* Contact links */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+          {/* Contact links — 2×2 grid: emails top, socials bottom */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12 max-w-2xl mx-auto">
             {LINKS.map((link, i) => {
               const Icon = link.icon;
               return (
@@ -125,17 +125,17 @@ export default function Contact() {
                   transition={{ delay: 0.3 + i * 0.1 }}
                   className={`group flex items-center gap-3 p-4 border ${link.bg} ${link.hoverBorder} rounded-xl transition-all duration-200 text-left`}
                 >
-                  <div className={`p-2 rounded-lg bg-surface-2 ${link.color}`}>
-                    <Icon size={18} />
+                  <div className={`p-2 rounded-lg bg-surface-2 shrink-0 ${link.color}`}>
+                    <Icon size={16} />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <div className="text-xs text-text-muted font-mono mb-0.5">{link.label}</div>
-                    <div className="text-xs text-text-primary font-medium break-all leading-snug">
+                    <div className="text-[10px] text-text-muted font-mono mb-0.5 uppercase tracking-wide">{link.label}</div>
+                    <div className="text-sm text-text-primary font-medium whitespace-nowrap overflow-hidden text-ellipsis">
                       {link.value}
                     </div>
                   </div>
                   <ArrowUpRight
-                    size={14}
+                    size={13}
                     className="text-text-muted group-hover:text-text-primary shrink-0 transition-colors"
                   />
                 </motion.a>
