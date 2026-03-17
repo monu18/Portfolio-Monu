@@ -146,7 +146,18 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-1.5 rounded-lg border border-border hover:border-border-light text-text-muted hover:text-text-primary transition-all"
-                title="View on GitHub"
+                title="GitHub"
+              >
+                <ArrowUpRight size={15} />
+              </a>
+            )}
+            {project.github2 && (
+              <a
+                href={project.github2}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-1.5 rounded-lg border border-border hover:border-border-light text-text-muted hover:text-text-primary transition-all"
+                title="GitHub (LLMSpark)"
               >
                 <ArrowUpRight size={15} />
               </a>

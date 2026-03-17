@@ -348,7 +348,7 @@ export default function ExtraContent() {
             heading="Giving Back"
             sub="Co-founding an NGO, building for social impact, and teaching digital skills to underserved communities."
           >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            <div className="space-y-4 max-w-4xl mx-auto">
               {VOLUNTEERING.map((v, i) => (
                 <VolunteerCard key={v.org + v.role} entry={v} index={i} />
               ))}

@@ -130,7 +130,7 @@ export default function Contact() {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-xs text-text-muted font-mono mb-0.5">{link.label}</div>
-                    <div className="text-sm text-text-primary truncate font-medium">
+                    <div className="text-xs text-text-primary font-medium break-all leading-snug">
                       {link.value}
                     </div>
                   </div>

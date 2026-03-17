@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Monu Kumar | Senior Software Engineer",
+  title: { default: "Monu Kumar", template: "%s | Monu Kumar" },
   description:
     "Senior Software Engineer specializing in distributed systems, real-time data pipelines, and high-scale backend infrastructure. Building systems that process millions of events per second.",
   keywords: [

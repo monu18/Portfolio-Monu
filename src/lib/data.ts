@@ -200,6 +200,7 @@ export interface Project {
   technologies: string[];
   metrics: { value: string; label: string }[];
   github?: string;
+  github2?: string;
   youtube?: string;
   youtube2?: string;
   youtube2Label?: string;
@@ -344,39 +345,12 @@ export const PROJECTS: Project[] = [
       { value: "DL4J", label: "Framework" },
     ],
     github: "https://github.com/monu18/LLMForge",
+    github2: "https://github.com/monu18/LLMSpark",
     youtube: "https://www.youtube.com/watch?v=AdRrHLsCkYA",
     youtube2: "https://www.youtube.com/watch?v=QQrTzevd2hA",
     youtube2Label: "LLM on EMR",
     featured: false,
     color: "primary",
-  },
-  {
-    id: "llm-job-assistant",
-    title: "LLM-Powered Job Application Assistant",
-    subtitle: "GenAI tool for resume parsing, JD matching & tailored email generation",
-    category: "ml",
-    status: "open-source",
-    period: "Jan 2025 – Mar 2025",
-    problem:
-      "Job seekers spend hours manually tailoring applications per role. Generic emails get ignored — but personalization at scale requires understanding both the resume and the job description deeply.",
-    solution:
-      "Developed a GenAI tool that parses resumes and job descriptions, then generates highly tailored application emails using Gemini. Integrated a \"DeepThink\" chain-of-thought reasoning layer that surfaces the model's thought process step-by-step — building user trust in AI-generated output.",
-    architecture:
-      "Resume PDF + JD text → Gemini (structured extraction) → DeepThink reasoning chain → Tailored email generation → Streamlit UI",
-    impact: [
-      "End-to-end resume + JD parsing with structured entity extraction via prompt engineering",
-      "\"DeepThink\" reasoning layer makes AI thought process transparent — boosted user confidence and engagement",
-      "Generates role-specific, personalized emails that reflect the candidate's actual experience",
-      "Streamlit UI enables non-technical users to run the full pipeline in minutes",
-    ],
-    technologies: ["Python", "Streamlit", "Gemini", "Prompt Engineering", "LLM", "RAG"],
-    metrics: [
-      { value: "Gemini", label: "LLM Backend" },
-      { value: "DeepThink", label: "CoT Layer" },
-      { value: "E2E", label: "Pipeline" },
-    ],
-    featured: false,
-    color: "cyan",
   },
 ];
 
