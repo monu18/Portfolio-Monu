@@ -16,7 +16,7 @@
     width: 100%;
     height: auto;
     bottom: 0;
-    transform: rotateZ(30deg) !important;
+    transform: rotateZ(-10deg) !important;
   }
 
   .solid-logo {
@@ -26,9 +26,9 @@
     bottom: auto;
     left: 0;
     margin: auto;
-    width: 100%;
+    width: 140%;
     opacity: 1;
-    transform: rotateZ(30deg) !important;
+    transform: rotateZ(-10deg) !important;
     z-index: 1;
   }
 }

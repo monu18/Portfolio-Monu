@@ -10,51 +10,53 @@ import './index.scss'
 const workExperience = [
   {
     id: 1,
-    company: 'Mak Design Private Limited',
-    companyUrl: 'https://www.makdesign.in/',
-    position: 'Software Development Engineer',
-    duration: 'May 2024 – Present',
-    location: 'Mumbai, Maharashtra (Remote)',
+    company: 'University of Illinois',
+    companyUrl: 'https://www.uic.edu/',
+    position: 'Graduate Teaching Assistant',
+    duration: 'June 2025 – August 2025',
+    location: 'Chicago, IL',
     achievements: [
-      'Built a real-time notification module using Django and MongoDB, secured by end-to-end encryption, ensuring timely and confidential delivery of critical alerts to end-users.',
-      'Created a framework for performance analytics loading time, click event response time for maps rendered by different libraries using JavaScript and connected it to a React frontend.'
+      'Designed hands-on lab modules on Big Data frameworks (PySpark, Apache Airflow), guiding 50+ students to build distributed ETL pipelines that simulated real-world data ingestion, orchestration, and fault-tolerant processing at scale.',
+      'Led live research projects integrating AWS RDS, Python-based web-scraping services, and LLM prompt-engineering pipelines, automating data ingestion workflows that processed 10K+ records per batch to accelerate experimentation cycles.'
     ]
   },
   {
     id: 2,
-    company: 'Defence Research and Development Organisation (DRDO)',
-    companyUrl: 'https://www.drdo.gov.in/drdo/',
-    position: 'Software Development Engineer',
-    duration: 'May 2023 – May 2024',
-    location: 'Gwalior, Madhya Pradesh (Hybrid)',
+    company: 'INFOEDGE',
+    companyUrl: 'https://www.infoedge.in/',
+    position: 'Senior Software Engineer',
+    duration: 'April 2022 – July 2024',
+    location: 'Noida, India',
     achievements: [
-      'Engineered a heavy-gas dispersion model (Java), with 92% predictive accuracy, enhancing hazard prediction capabilities for safety teams.',
-      'Designed and implemented a Java Swing GUI, validated through improved usability testing, to streamline and simplify end-user interactions.',
-      'Developed a 2D plotting tool in Python backed by a Flask API, enabling data visualization that improved decision-making clarity among project stakeholders.'
+      'Architected a distributed subscription platform for 1M+ users integrating BillDesk and Apple APIs using Spring Boot, Kafka, Aerospike, and MySQL, improving throughput by 40% and revenue by 22%; earned the 2023 Merit Award for engineering excellence',
+      'Built a real-time personalization engine with Kafka, MongoDB, and Aerospike to generate user-specific offers under 200 ms, improving premium conversions by 8% and receiving the Top Gun Award (Q1 2023–24).',
+      'Developed a behavioral lead-prioritization system ranking over 2 M prospects daily using engagement and demographic signals, increasing sales efficiency by 15%.',
+      'Implemented observability pipelines with Prometheus and Grafana, reducing mean time to detection by 60% and maintaining 99.99% uptime through proactive alerting.'
     ]
   },
   {
     id: 3,
-    company: 'Verified Network',
-    companyUrl: 'https://www.verified.network/',
-    position: 'DevOps Engineer — Contract',
-    duration: 'February 2023 — May 2023',
-    location: 'Switzerland (Remote)',
+    company: 'INFOEDGE',
+    companyUrl: 'https://www.infoedge.in/',
+    position: 'Software Engineer',
+    duration: 'July 2021 — March 2022',
+    location: 'Noida, India',
     achievements: [
-      'Redesigned the trading platform\'s core engine by implementing an order-matching system using IPFS Merkle DAG and IPFS pub-sub on a Node.js/Express.js server, reducing transaction times by 70% and increasing marketplace efficiency.',
-      'Achieved 90% test coverage by architecting comprehensive test suites with Chai and Mocha, ensuring robust code quality and reliability.',
-      'Engineered the CI/CD pipeline (GitHub Actions and AWS CodeDeploy) resulting in fully automated deployments and accelerating release cycles.'
+      'Led Jeevansathi’s flagship Monetization Project, launching new subscription plans and instrumenting Prometheus-Grafana dashboards for real-time revenue tracking, driving an 18% uplift (~$2 M) in quarterly revenue.',
+      'Re-architected the Membership and Order System from PHP to Java microservices using Spring Boot, RabbitMQ, and Redis, improving request latency and service reliability across high-traffic modules.',
+      'Received the RockStar Award (Mar 2022) for end-to-end delivery and measurable business impact.'
     ]
   },
   {
     id: 4,
-    company: 'Metarootz',
-    companyUrl: 'https://www.metarootz.io/',
-    position: 'Software Development Engineer — Contract',
-    duration: 'December 2022 — February 2023',
-    location: 'Dubai, UAE (Remote)',
+    company: 'FINBOX',
+    companyUrl: 'https://finbox.com/',
+    position: 'Software Developer Intern',
+    duration: 'December 2017 — Jan 2018',
+    location: 'Gurugram, India',
     achievements: [
-      'Developed a social media platform using Node.js/Express.js, Next.js, and MongoDB, scaled it to 10,000+ active users, and integrated WebSocket-based voice/video calling to boost user engagement and interaction.'
+      'Developed data ingestion and rules-evaluation modules for a credit-risk scoring platform, using Java, REST APIs, and PostgreSQL, enabling dynamic credit-limit decisions based on borrower behavior and transaction history.',
+      'Implemented asynchronous job scheduling and caching with Quartz and Ehcache, improving response times by 45% and reducing redundant API calls across partner integrations.'
     ]
   }
 ]
@@ -82,9 +84,7 @@ const Experience = () => {
             />
           </h1>
           <p>
-            My professional journey spans across various industries and technologies,
-            from defense systems to trading platforms and social media applications.
-            Each role has contributed to my growth as a versatile software engineer.
+            My experience spans 3+ years of building large-scale backend systems across consumer internet and enterprise platforms. I’ve worked on high-throughput distributed services, event-driven architectures, and data-intensive systems, consistently focusing on reliability, performance, and measurable business impact. Each role has strengthened my ability to design systems that scale — both technically and operationally.
           </p>
         </div>
 

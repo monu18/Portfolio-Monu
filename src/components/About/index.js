@@ -39,17 +39,24 @@ const About = () => {
             />
           </h1>
           <p>
-            TODO: I’m a Software Engineer and Data Scientist with over 3 years of
-            experience, specializing in automating workflows, optimizing CI/CD
-            pipelines, and deploying intelligent systems. My expertise spans
-            across backend engineering, data driven case studies, and aritificial
-            intelligence, with a strong foundation in security.
+            I’m a Senior Software Engineer and MS Computer Science student at the University of Illinois Chicago, focused on building reliable, scalable distributed systems.
+
           </p>
           <p>
-            TODO: I’m passionate about solving real-world problems through innovative
-            technology and continuously learning to stay ahead of industry
-            trends. Whether it's streamlining infrastructure or building
-            scalable applications, I bring a holistic approach to every project.
+            Previously at InfoEdge, I designed and scaled subscription and monetization platforms serving 1M+ users, helping drive a 22% revenue increase. My work centered on event-driven microservices built with Spring Boot and Kafka, along with server-to-server integrations using webhooks, with an emphasis on performance, observability, and long-term system health.
+
+          </p>
+          <p>
+            More recently, I’ve been working on cloud-native and distributed AI systems — including a conversational platform integrating local LLMs (Ollama) with AWS via Akka HTTP microservices, and a distributed language model training pipeline built using Hadoop and Spark.
+
+          </p>
+          <p>
+            Outside of work, I care deeply about using technology to create meaningful impact. I co-founded Magadh Mission Foundation, an NGO focused on expanding educational access for underprivileged children.
+
+          </p>
+          <p>
+            I’m currently deepening my expertise in cloud infrastructure, system design, and distributed computing, and I’m excited to build high-impact software at companies operating at global scale.
+
           </p>
         </div>
 
