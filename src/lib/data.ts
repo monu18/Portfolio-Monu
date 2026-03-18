@@ -6,7 +6,7 @@ export const PERSONAL_INFO = {
   name: "Monu Kumar",
   title: "Senior Software Engineer",
   tagline: "Building Distributed Systems at Scale",
-  bio: "I design and build high-throughput backend systems that handle millions of users. From real-time personalization engines to distributed subscription platforms and AI gateways — I obsess over latency, reliability, and elegant architecture.",
+  bio: "I design and build high-throughput backend systems that handle millions of users. From real-time personalization engines to distributed subscription platforms and AI gateways. I obsess over latency, reliability, and elegant architecture.",
   email: "mkuma47@uic.edu",
   emailPersonal: "connectkumar.monu@gmail.com",
   phone: "+1 (312) 843-0296",
@@ -64,9 +64,9 @@ export const EXPERIENCES: Experience[] = [
     description:
       "Led backend engineering for Jeevansathi.com — one of India's largest matrimonial platforms. Owned the distributed subscription platform, billing infrastructure, and personalization services at 5M+ user scale.",
     highlights: [
-      "Architected scalable distributed microservices for a subscription platform serving 5M+ users — achieving 42% throughput improvement and 35% revenue growth via caching and load-balanced services",
+      "Architected scalable distributed microservices for a subscription platform serving 5M+ users, achieving 42% throughput improvement and 35% revenue growth via caching and load-balanced services",
       "Designed fault-tolerant recurring billing integrations with Apple and BillDesk using JWT-based authentication and asymmetric key exchange, driving 2× growth in premium subscriptions within a quarter",
-      "Built low-latency personalization and ranking services using Collaborative Filtering and XGBoost, processing 2M+ prospects daily — increasing premium conversions by 8% and sales efficiency by 15%",
+      "Built low-latency personalization and ranking services using Collaborative Filtering and XGBoost, processing 2M+ prospects daily, increasing premium conversions by 8% and sales efficiency by 15%",
       "Established production observability and alerting (Prometheus, Grafana), reducing MTTR by 60% and sustaining 99.99% uptime while supporting on-call incident response",
       "Mentored 3 junior engineers and led backend microservices with TDD, unit/integration tests, and documentation",
     ],
@@ -104,7 +104,7 @@ export const EXPERIENCES: Experience[] = [
       "Built core search, notification, and CRM infrastructure powering daily matchmaking for millions of users. Led a major search migration from Solr to Elasticsearch and re-architected the order management system.",
     highlights: [
       "Migrated from Solr to Elasticsearch, enabling near-real-time indexing at 6M+ reads/day (1000+ TPS)",
-      "Reduced P99 search latency from 6000+ ms to 600 ms via shard reconfiguration and query optimization — a 10× improvement",
+      "Reduced P99 search latency from 6000+ ms to 600 ms via shard reconfiguration and query optimization, a 10× improvement",
       "Built an event-driven notification service (Kafka, APNS, FCM) for real-time and scheduled alerts with Azkaban",
       "Designed RESTful APIs and a React-based full-stack CRM platform serving 200K+ DAUs for subscription lifecycle and payment management",
       "Re-architected order workflow from PHP monolith to Spring Boot microservices using RabbitMQ and Redis",
@@ -217,16 +217,16 @@ export const PROJECTS: Project[] = [
     status: "open-source",
     period: "Aug 2025 – Jan 2026",
     problem:
-      "Billions of people lack reliable internet access but need AI capabilities. Traditional AI interfaces require stable HTTP connections — unusable for low-connectivity regions.",
+      "Billions of people lack reliable internet access but need AI capabilities. Traditional AI interfaces require stable HTTP connections, unusable for low-connectivity regions.",
     solution:
       "Designed an event-driven gateway that routes AI queries over SMS using Spring Boot, Kafka, Redis, and Twilio. Stateful conversations are maintained in Redis. Asynchronous Kafka pipelines enable cross-language (Java/Python) AI processing.",
     architecture:
       "SMS (Twilio) → Spring Boot Gateway → Kafka → Python AI Worker (Ollama/Bedrock) → Redis (conversation state) → Response back via Twilio SMS",
     impact: [
-      "Stateful conversation handling with Redis-backed caching — zero context loss across SMS turns",
+      "Stateful conversation handling with Redis-backed caching, zero context loss across SMS turns",
       "Asynchronous Kafka pipelines reduced redundant LLM calls significantly",
       "Cross-language processing: Java gateway + Python AI workers on same Kafka bus",
-      "Deployable on minimal infrastructure — accessible in low-bandwidth environments",
+      "Deployable on minimal infrastructure, accessible in low-bandwidth environments",
     ],
     technologies: [
       "Spring Boot",
@@ -326,7 +326,7 @@ export const PROJECTS: Project[] = [
     status: "open-source",
     period: "Sep 2024 – Dec 2024",
     problem:
-      "Processing and training ML models on a 65GB+ text corpus on a single machine was infeasible — memory constraints, serial execution, and unpredictable runtimes blocked experimentation at scale.",
+      "Processing and training ML models on a 65GB+ text corpus on a single machine was infeasible, memory constraints, serial execution, and unpredictable runtimes blocked experimentation at scale.",
     solution:
       "Built a distributed ML training pipeline on AWS EMR using Hadoop and Spark for large-scale text processing and embedding generation. Used DeepLearning4j for parallelized model training with integrated metrics tracking. Optimized data partitioning and execution plans for predictable cluster-level performance.",
     architecture:
@@ -376,12 +376,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Subscription Platform at 5M+ Users",
     subtitle: "How we scaled Jeevansathi's billing infrastructure and drove 35% revenue growth",
     challenge:
-      "Design a subscription management system that handles 5M+ concurrent users, integrates with Apple IAP and BillDesk, ensures fault-tolerant billing with exactly-once semantics, and maintains high throughput under peak load — all while supporting complex recurring billing rules across subscription tiers.",
+      "Design a subscription management system that handles 5M+ concurrent users, integrates with Apple IAP and BillDesk, ensures fault-tolerant billing with exactly-once semantics, and maintains high throughput under peak load, all while supporting complex recurring billing rules across subscription tiers.",
     designPrinciples: [
       {
         title: "Event-Driven Architecture",
         description:
-          "Subscription lifecycle events (created, upgraded, cancelled, expired, renewed) are published to Kafka topics. Downstream services (notifications, analytics, CRM) subscribe independently — fully decoupled fanout without tight coupling.",
+          "Subscription lifecycle events (created, upgraded, cancelled, expired, renewed) are published to Kafka topics. Downstream services (notifications, analytics, CRM) subscribe independently, fully decoupled fanout without tight coupling.",
       },
       {
         title: "Layered Caching Strategy",
@@ -426,7 +426,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { metric: "System uptime", value: "99.99%" },
     ],
     lessonsLearned: [
-      "Billing idempotency is non-negotiable — we caught 3 duplicate charge scenarios in staging with chaos testing that would have been real customer issues in production.",
+      "Billing idempotency is non-negotiable, we caught 3 duplicate charge scenarios in staging with chaos testing that would have been real customer issues in production.",
       "Apple IAP webhook ordering is not guaranteed. Building idempotent handlers that process events out-of-order was critical.",
       "MTTR improvement (60% reduction via Prometheus/Grafana) had more ROI impact per engineer-hour than almost any other infra investment.",
     ],
@@ -450,12 +450,12 @@ export const CASE_STUDIES: CaseStudy[] = [
     title: "Personalized Discount Engine",
     subtitle: "Behavioral signal pipeline that drove 8% lift in premium subscription uptake",
     challenge:
-      "Jeevansathi was running blanket discount campaigns — same offer to every user regardless of intent or engagement. This eroded margins without meaningfully improving conversions. The challenge: build a system that determines the right discount, for the right user, at the right moment — using real behavioral signals without adding latency to the critical path.",
+      "Jeevansathi was running blanket discount campaigns, same offer to every user regardless of intent or engagement. This eroded margins without meaningfully improving conversions. The challenge: build a system that determines the right discount, for the right user, at the right moment — using real behavioral signals without adding latency to the critical path.",
     designPrinciples: [
       {
         title: "Behavioral Segmentation",
         description:
-          "Users are scored across engagement dimensions: profile completeness, login recency, match interaction rate, and messaging frequency. Segment buckets (high-intent, dormant, re-engaging) determine discount depth — no flat rates, fully personalized.",
+          "Users are scored across engagement dimensions: profile completeness, login recency, match interaction rate, and messaging frequency. Segment buckets (high-intent, dormant, re-engaging) determine discount depth, no flat rates, fully personalized.",
       },
       {
         title: "Real-Time Signal Freshness",
@@ -465,7 +465,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         title: "Read-Optimized Eligibility Layer",
         description:
-          "Computed discount eligibility is materialized into Aerospike keyed by user ID. The Pricing API does a single sub-millisecond Aerospike read at checkout — zero latency penalty on the conversion funnel's hottest path.",
+          "Computed discount eligibility is materialized into Aerospike keyed by user ID. The Pricing API does a single sub-millisecond Aerospike read at checkout, zero latency penalty on the conversion funnel's hottest path.",
       },
     ],
     keyDecisions: [
@@ -474,7 +474,7 @@ export const CASE_STUDIES: CaseStudy[] = [
         rationale:
           "Engagement signals are heterogeneous and evolve rapidly (new signal types added monthly). MongoDB's flexible document model avoids schema migrations for every signal iteration. Each user document holds the full behavioral snapshot for the scoring engine.",
         tradeoff:
-          "Sacrifices strict transactional consistency. Behavioral profiles are eventually consistent — acceptable since a 30-second stale score has negligible business impact vs. a 30-second checkout delay.",
+          "Sacrifices strict transactional consistency. Behavioral profiles are eventually consistent, acceptable since a 30-second stale score has negligible business impact vs. a 30-second checkout delay.",
       },
       {
         decision: "Kafka event stream over nightly batch ETL",
@@ -486,7 +486,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       {
         decision: "Feign client for pricing service integration",
         rationale:
-          "Feign client creates a strongly-typed, declarative HTTP contract between the Discount Engine and the Pricing Service. This prevents integration drift — both services stay aligned through a shared interface definition, with built-in load balancing and circuit breaking via Resilience4j.",
+          "Feign client creates a strongly-typed, declarative HTTP contract between the Discount Engine and the Pricing Service. This prevents integration drift, both services stay aligned through a shared interface definition, with built-in load balancing and circuit breaking via Resilience4j.",
         tradeoff:
           "Adds a compile-time dependency on the pricing service's API contract. Breaking changes in the Pricing API require coordinated deploys.",
       },
@@ -500,7 +500,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { metric: "Daily Kafka events", value: "5M+" },
     ],
     lessonsLearned: [
-      "Behavioral segmentation outperformed rule-based discounting from day one — the 8% lift came with tighter margins than blanket discounts because high-intent users needed smaller nudges.",
+      "Behavioral segmentation outperformed rule-based discounting from day one, the 8% lift came with tighter margins than blanket discounts because high-intent users needed smaller nudges.",
       "Aerospike's TTL feature was critical: stale discount eligibility auto-expires, preventing the system from offering discounts to users who already converted or churned.",
       "Feign client's circuit breaker saved us during a Pricing Service degradation event — the Discount Engine gracefully fell back to a default discount tier instead of failing the entire checkout flow.",
     ],
