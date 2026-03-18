@@ -20,6 +20,7 @@ export default function Home() {
       <TechStack />
       <ExtraContent />
       <Contact />
+      <div className="h-screen" aria-hidden="true" />
     </main>
   );
 }
