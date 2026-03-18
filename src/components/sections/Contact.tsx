@@ -7,7 +7,7 @@ import { PERSONAL_INFO } from "@/lib/data";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 font-mono text-xs text-primary tracking-widest uppercase mb-4">
+    <span className="inline-flex items-center gap-2 font-mono text-sm text-primary tracking-widest uppercase mb-4">
       <span className="w-8 h-px bg-primary" />
       {children}
       <span className="w-8 h-px bg-primary" />
@@ -78,7 +78,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-6xl md:text-7xl font-bold text-text-primary mb-4"
+            className="text-4xl md:text-5xl font-bold text-text-primary mb-4"
           >
             Let&apos;s Build Together
           </motion.h2>
@@ -89,7 +89,7 @@ export default function Contact() {
             transition={{ delay: 0.2 }}
             className="text-text-secondary text-lg mb-4 leading-relaxed"
           >
-            I&apos;m open to senior/staff backend roles focused on distributed systems, platform
+            I&apos;m open to backend roles focused on distributed systems, platform
             engineering, or data infrastructure. If you&apos;re building something hard — I&apos;d
             love to hear about it.
           </motion.p>

@@ -22,7 +22,7 @@ import {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 font-mono text-xs text-primary tracking-widest uppercase mb-4">
+    <span className="inline-flex items-center gap-2 font-mono text-sm text-primary tracking-widest uppercase mb-4">
       <span className="w-8 h-px bg-primary" />
       {children}
       <span className="w-8 h-px bg-primary" />
@@ -389,7 +389,7 @@ function ExtraSection({
           initial={{ opacity: 0, y: 15 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="text-5xl md:text-6xl font-bold text-text-primary mb-3"
+          className="text-3xl md:text-4xl font-bold text-text-primary mb-3"
         >
           {heading}
         </motion.h2>
