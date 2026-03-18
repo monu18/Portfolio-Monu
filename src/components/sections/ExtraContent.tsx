@@ -389,7 +389,7 @@ function ExtraSection({
           initial={{ opacity: 0, y: 15 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
-          className="text-3xl md:text-4xl font-bold text-text-primary mb-3"
+          className="text-5xl md:text-6xl font-bold text-text-primary mb-3"
         >
           {heading}
         </motion.h2>

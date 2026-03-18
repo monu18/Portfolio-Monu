@@ -78,7 +78,7 @@ export default function Contact() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-text-primary mb-4"
+            className="text-6xl md:text-7xl font-bold text-text-primary mb-4"
           >
             Let&apos;s Build Together
           </motion.h2>

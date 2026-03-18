@@ -257,7 +257,7 @@ export default function Experience() {
             initial={{ opacity: 0, y: 20 }}
             animate={headingInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl md:text-5xl font-bold text-text-primary mb-4"
+            className="text-6xl md:text-7xl font-bold text-text-primary mb-4"
           >
             Where I&apos;ve Shipped
           </motion.h2>

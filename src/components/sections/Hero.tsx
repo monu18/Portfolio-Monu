@@ -112,11 +112,14 @@ export default function Hero() {
             initial="hidden"
             animate="visible"
             custom={0.1}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-text-primary mb-4 leading-[1.1]"
+            className="font-bold tracking-tight mb-4"
           >
-            Building{" "}
-            <br className="hidden sm:block" />
-            <TypingText />
+            <span className="block text-5xl sm:text-6xl md:text-7xl text-text-primary leading-[1.1]">
+              Building
+            </span>
+            <span className="block min-h-[1.2em] text-2xl sm:text-4xl md:text-5xl leading-[1.15]">
+              <TypingText />
+            </span>
           </motion.h1>
 
           {/* Name + role */}
@@ -127,8 +130,8 @@ export default function Hero() {
             custom={0.25}
             className="mt-6 mb-4"
           >
-            <span className="font-mono text-text-muted text-sm tracking-widest uppercase">
-              &mdash;&nbsp; {PERSONAL_INFO.name} &nbsp;&mdash;
+            <span className="font-mono text-text-primary text-xl sm:text-2xl font-bold tracking-widest uppercase">
+              {PERSONAL_INFO.name}
             </span>
           </motion.div>
 
