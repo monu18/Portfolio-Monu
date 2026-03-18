@@ -59,7 +59,7 @@ export default function Contact() {
   const inView = useInView(ref, { once: true, margin: "-60px" });
 
   return (
-    <section id="contact" className="section-padding relative overflow-hidden">
+    <section id="contact" className="section-padding pb-48 relative overflow-hidden">
       <div className="absolute top-0 left-0 right-0 h-px glow-line" />
 
       {/* Background gradient */}

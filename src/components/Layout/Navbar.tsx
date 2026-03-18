@@ -14,18 +14,26 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
+      // Clear active when at hero (top of page)
+      if (window.scrollY < 100) {
+        setActiveSection("");
+        return;
+      }
+
       // Use absolute page offset so nested elements (e.g. #education inside #experience) work correctly
       const sections = NAV_ITEMS.map((item) => item.href.replace("#", ""));
+      let matched = "";
       for (const section of [...sections].reverse()) {
         const el = document.getElementById(section);
         if (el) {
           const absoluteTop = el.getBoundingClientRect().top + window.scrollY;
           if (window.scrollY >= absoluteTop - 120) {
-            setActiveSection(section);
+            matched = section;
             break;
           }
         }
       }
+      setActiveSection(matched);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
