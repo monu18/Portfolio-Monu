@@ -2,12 +2,12 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { MapPin, Calendar, ExternalLink, TrendingUp, GraduationCap } from "lucide-react";
+import { MapPin, Calendar, ExternalLink, TrendingUp } from "lucide-react";
 import { EXPERIENCES, EDUCATION } from "@/lib/data";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 font-mono text-sm text-primary tracking-widest uppercase mb-4">
+    <span className="inline-flex items-center gap-2 font-mono text-base font-bold text-white tracking-widest uppercase mb-4">
       <span className="w-8 h-px bg-primary" />
       {children}
       <span className="w-8 h-px bg-primary" />
@@ -181,9 +181,8 @@ function EducationCard() {
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5 }}
     >
-      <div className="flex items-center gap-2 mb-6">
-        <GraduationCap size={18} className="text-cyan" />
-        <h3 className="text-lg font-bold text-text-primary">Education</h3>
+      <div className="text-center mb-8">
+        <SectionLabel>Education</SectionLabel>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         {EDUCATION.map((edu) => (
@@ -286,7 +285,7 @@ export default function Experience() {
         </div>
 
         {/* Education */}
-        <div className="max-w-4xl mx-auto">
+        <div id="education" className="max-w-4xl mx-auto">
           <div className="h-px glow-line mb-12" />
           <EducationCard />
         </div>

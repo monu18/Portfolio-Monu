@@ -19,6 +19,7 @@ export const PERSONAL_INFO = {
 
 export const NAV_ITEMS = [
   { label: "Experience", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
   { label: "System Design", href: "#system-design" },
   { label: "Stack", href: "#stack" },
@@ -62,7 +63,7 @@ export const EXPERIENCES: Experience[] = [
     duration: "2 yrs 4 mos",
     location: "Noida, India",
     description:
-      "Led backend engineering for Jeevansathi.com — one of India's largest matrimonial platforms. Owned the distributed subscription platform, billing infrastructure, and personalization services at 5M+ user scale.",
+      "Led backend engineering for Jeevansathi.com: One of India's largest matrimonial platforms. Owned the distributed subscription platform, billing infrastructure, and personalization services at 5M+ user scale.",
     highlights: [
       "Architected scalable distributed microservices for a subscription platform serving 5M+ users, achieving 42% throughput improvement and 35% revenue growth via caching and load-balanced services",
       "Designed fault-tolerant recurring billing integrations with Apple and BillDesk using JWT-based authentication and asymmetric key exchange, driving 2× growth in premium subscriptions within a quarter",

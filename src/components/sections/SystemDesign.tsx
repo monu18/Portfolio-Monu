@@ -7,7 +7,7 @@ import { CASE_STUDIES } from "@/lib/data";
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 font-mono text-sm text-primary tracking-widest uppercase mb-4">
+    <span className="inline-flex items-center gap-2 font-mono text-base font-bold text-white tracking-widest uppercase mb-4">
       <span className="w-8 h-px bg-primary" />
       {children}
       <span className="w-8 h-px bg-primary" />
@@ -212,7 +212,7 @@ export default function SystemDesign() {
             transition={{ delay: 0.2 }}
             className="text-text-secondary max-w-2xl mx-auto"
           >
-            How I think about designing systems at scale — the trade-offs, key decisions, and
+            How I think about designing systems at scale, the trade-offs, key decisions, and
             lessons learned from production at Jeevansathi.
           </motion.p>
         </div>

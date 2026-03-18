@@ -22,7 +22,7 @@ import {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-2 font-mono text-sm text-primary tracking-widest uppercase mb-4">
+    <span className="inline-flex items-center gap-2 font-mono text-base font-bold text-white tracking-widest uppercase mb-4">
       <span className="w-8 h-px bg-primary" />
       {children}
       <span className="w-8 h-px bg-primary" />
@@ -329,6 +329,7 @@ export default function ExtraContent() {
         {/* ── Publications ── */}
         {hasPubs && (
           <ExtraSection
+            id="publication"
             label="Research"
             heading="Publication"
             sub="Peer-reviewed research on deep learning applied to medical imaging."
@@ -344,6 +345,7 @@ export default function ExtraContent() {
         {/* ── Volunteering ── */}
         {hasVol && (
           <ExtraSection
+            id="ngo"
             label="Community"
             heading="Giving Back"
             sub="Co-founding an NGO, building for social impact, and teaching digital skills to underserved communities."
@@ -363,11 +365,13 @@ export default function ExtraContent() {
 
 // ── Reusable section wrapper ──────────────────────────────────
 function ExtraSection({
+  id,
   label,
   heading,
   sub,
   children,
 }: {
+  id?: string;
   label: string;
   heading: string;
   sub: string;
@@ -377,7 +381,7 @@ function ExtraSection({
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <div>
+    <div id={id}>
       <div ref={ref} className="text-center mb-10">
         <motion.div
           initial={{ opacity: 0, y: 15 }}

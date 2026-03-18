@@ -14,13 +14,16 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
 
-      // Determine active section
+      // Use absolute page offset so nested elements (e.g. #education inside #experience) work correctly
       const sections = NAV_ITEMS.map((item) => item.href.replace("#", ""));
-      for (const section of sections.reverse()) {
+      for (const section of [...sections].reverse()) {
         const el = document.getElementById(section);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(section);
-          break;
+        if (el) {
+          const absoluteTop = el.getBoundingClientRect().top + window.scrollY;
+          if (window.scrollY >= absoluteTop - 120) {
+            setActiveSection(section);
+            break;
+          }
         }
       }
     };
